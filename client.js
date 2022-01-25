@@ -31,6 +31,29 @@ const employees = [
   }
 ];
 
+ function bonusCalculation(array) {
+   let ratingPercentage = 0;
+   
+   for (let employee of array){
+    if (array.reviewRating < 3){
+      ratingPercentage = 0;
+      return array.annualSalary * ratingPercentage;
+    }
+    if (array.reviewRating === 3 ){
+      ratingPercentage = 0.04;
+      return array.annualSalary * ratingPercentage;
+    }
+    if (array.reviewRating === 4 ){
+      ratingPercentage = 0.06;
+      return array.annualSalary * ratingPercentage;
+    }
+    if (array.reviewRating === 5 ){
+      ratingPercentage = 0.10;
+      return array.annualSalary * ratingPercentage;
+    }
+ }
+ console.log(bonusCalculation(employees));
+
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // This problem is massive! Break the problem down, take small steps, and test as you go.
@@ -38,5 +61,3 @@ const employees = [
 
 // This is not a race. Everyone on your team should understand what is happening.
 // Ask questions when you don't.
-
-console.log( employees );
