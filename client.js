@@ -31,28 +31,87 @@ const employees = [
   }
 ];
 
- function bonusCalculation(array) {
-   let ratingPercentage = 0;
-   
-   for (let employee of array){
-    if (array.reviewRating < 3){
+let employeeBonusArray = [];
+
+function bonusCalc(inputArray, outputArray){
+  for (let i = 0; i < inputArray.length; i++){
+    let ratingPercentage = 0;
+    if (inputArray[i].reviewRating < 3){
+      finalPercentage = 0;
       ratingPercentage = 0;
-      return array.annualSalary * ratingPercentage;
     }
-    if (array.reviewRating === 3 ){
+    if (inputArray[i].reviewRating === 3){
       ratingPercentage = 0.04;
-      return array.annualSalary * ratingPercentage;
     }
-    if (array.reviewRating === 4 ){
+    if (inputArray[i].reviewRating === 4){
       ratingPercentage = 0.06;
-      return array.annualSalary * ratingPercentage;
     }
-    if (array.reviewRating === 5 ){
+    if (inputArray[i].reviewRating === 5){
       ratingPercentage = 0.10;
-      return array.annualSalary * ratingPercentage;
     }
- }
- console.log(bonusCalculation(employees));
+    if (inputArray[i].employeeNumber < 10000){
+      ratingPercentage += 0.05;
+    }
+    if (inputArray[i].annualSalary > 65000){
+      ratingPercentage -= 0.01;
+    }
+    if (ratingPercentage < 0){
+      ratingPercentage = 0;
+    }
+    if (ratingPercentage > 0.13){
+      ratingPercentage = 0.13;
+    }
+    outputArray[i] = {
+      name: inputArray[i].name,
+      bonusPercentage: ratingPercentage,
+      totalCompensation: 
+      totalBonus:
+    }
+  }
+}
+
+bonusCalc(employees, employeeBonusArray);
+console.log(employeeBonusArray);
+
+// function bonusCalc() {
+//   reviewCalc();
+//   // employeeNumberCalc(array);
+// }
+
+// function reviewCalc(){
+//   let ratingPercentage = 0;
+//   let finalBonus = 0;
+//   for (let employee of employees){
+//     let bonus = {
+//       name:
+//     }
+//     if (employee.reviewRating < 3){
+//       ratingPercentage = 0;
+//       bonus. = {
+//         annualSalary * ratingPercentage,
+//       }
+//     }
+//     if (employee.reviewRating === 3 ){
+//       ratingPercentage = 0.04;
+//       employee = {
+//         bonusAmount: employee.annualSalary * ratingPercentage,
+//       }
+//     }
+//     if (employee.reviewRating === 4 ){
+//       ratingPercentage = 0.06;
+//       employee = {
+//         bonusAmount: employee.annualSalary * ratingPercentage,
+//       }
+//     }
+//     if (employee.reviewRating === 5 ){
+//       ratingPercentage = 0.10;
+//       employee = {
+//         bonusAmount: employee.annualSalary * ratingPercentage,
+//       }
+//     }
+//   }
+// }
+
 
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
