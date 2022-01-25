@@ -61,11 +61,14 @@ function bonusCalc(inputArray, outputArray){
     if (ratingPercentage > 0.13){
       ratingPercentage = 0.13;
     }
+    // console.log('annual salary:', Number(inputArray[i].annualSalary));
+    // console.log('bonus:', inputArray[i].annualSalary * ratingPercentage);
+    
     outputArray[i] = {
       name: inputArray[i].name,
       bonusPercentage: ratingPercentage,
-      totalCompensation: 
-      totalBonus:
+      totalCompensation: Number(inputArray[i].annualSalary + (inputArray[i].annualSalary * ratingPercentage)),
+      totalBonus: Number(inputArray[i].annualSalary * ratingPercentage),
     }
   }
 }
