@@ -90,3 +90,13 @@ function bonusCalc(inputArray, outputArray){
 
 bonusCalc(employees, employeeBonusArray);
 console.log(employeeBonusArray);
+
+$( document ).ready( readyNow );
+
+function readyNow(){
+  $( '#btnCalculateBonus' ).on( 'click', displayBonus );
+}
+
+function DisplayBonus(){
+  
+}
